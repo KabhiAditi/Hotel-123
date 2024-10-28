@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Checkout</h2>
+<p>Room: {{ booking.room.name }}</p>
+<p>Customer Name: {{ booking.customer_name }}</p>
+<p>Check-in Date: {{ booking.check_in }}</p>
+<p>Check-out Date: {{ booking.check_out }}</p>
+
+<!-- Display the total amount due if applicable -->
+<p>Your total amount due: ${{ booking.total_amount }}</p>
+
+<form method="POST">
+    <button type="submit">Confirm Checkout</button>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Payment</h2>
+<p>Your total amount due: ${{ due_amount }}</p>
+<form method="POST" action="{{ url_for('confirm_payment', booking_id=booking_id) }}">
+    <button type="submit">Pay Now</button>
+</form>
+{% endblock %}

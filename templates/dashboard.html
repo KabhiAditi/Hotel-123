@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <header class="dashboard-header">
+        <h1>Booking Dashboard</h1>
+        <p>Manage your room bookings efficiently</p>
+    </header>
+
+    <div class="row">
+        {% for booking in bookings %}
+        <div class="col-md-4 mb-4">
+            <div class="card booking-card">
+                <div class="card-body">
+                    <h5 class="card-title">Booking ID: {{ booking[0] }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Customer: {{ booking[1] }}</h6>
+                    <p class="card-text">Room ID: <strong>{{ booking[2] }}</strong></p>
+                    <p class="card-text">Check-in: <strong>{{ booking[3] }}</strong></p>
+                    <p class="card-text">Check-out: <strong>{{ booking[4] }}</strong></p>
+                    <a href="{{ url_for('checkout', booking_id=booking[0]) }}" class="btn btn-primary">Checkout</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Serenity Suites. All rights reserved.</p>
+    </div>
+</div>
+{% endblock %}
