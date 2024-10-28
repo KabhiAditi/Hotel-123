@@ -1,0 +1,206 @@
+/* Base Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9; /* Light gray background */
+    color: #444; /* Dark text for better readability */
+    line-height: 1.6;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #2c3e50; /* Darker shade for headings */
+    margin-bottom: 10px; /* Space below headings */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #3498db; /* Bright blue */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease; /* Background color transition */
+}
+
+nav a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    position: relative; /* For pseudo-element effect */
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #ffdd57; /* Soft yellow underline */
+    width: 0; /* Start with no width */
+    transition: width 0.3s; /* Smooth width transition */
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Position under the link */
+    transform: translateX(-50%); /* Center the underline */
+}
+
+nav a:hover {
+    color: #ffdd57; /* Soft yellow on hover */
+}
+
+nav a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Container */
+.container {
+    max-width: 1200px; /* Limit width for better readability */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form Styles */
+form {
+    background: #ffffff; /* White background for forms */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 500px; /* Limit form width */
+    transition: box-shadow 0.3s ease; /* Transition for shadow */
+}
+
+form:hover {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: 100%; /* Full width inputs */
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px; /* Rounded input fields */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+    border-color: #3498db; /* Highlighted border on focus */
+    outline: none;
+}
+
+button {
+    background-color: #3498db; /* Button color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    position: relative; /* For pseudo-element effect */
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    height: 3px; /* Height of the line */
+    width: 0; /* Start with no width */
+    background: white; /* Color of the line */
+    bottom: -2px; /* Position below button */
+    left: 50%;
+    transition: width 0.3s; /* Smooth width transition */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:hover::after {
+    width: 100%; /* Expand line on hover */
+}
+
+/* Room List Styles */
+.room-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+}
+
+.room-list li {
+    background: #ffffff; /* Room card background */
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for transform and shadow */
+}
+
+.room-list li:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.room-number {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db; /* Bright blue */
+    color: white;
+    position: relative; /* Change to relative for normal flow */
+    margin-top: 20px; /* Space above footer */
+}
+
+/* Alert Styles */
+.flash {
+    margin: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold; /* Bold text for alerts */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px; /* Less padding on mobile */
+    }
+
+    nav a {
+        margin: 0 10px; /* Less margin on mobile */
+    }
+
+    form {
+        padding: 20px; /* Less padding on mobile */
+        margin: 10px; /* Less margin on mobile */
+    }
+
+    .room-list li {
+        padding: 15px; /* Less padding on mobile */
+    }
+
+    footer {
+        padding: 15px; /* Less padding on mobile */
+    }
+}
