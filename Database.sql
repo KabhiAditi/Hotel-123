@@ -43,7 +43,10 @@ CREATE TABLE Booking (
     check_in_date DATE,
     check_out_date DATE,
     status VARCHAR(50) DEFAULT 'Booked'
+    is_completed BOOLEAN DEFAULT FALSE;
+
 );
+
 
 CREATE TABLE Rating (
     rating_id SERIAL PRIMARY KEY,
